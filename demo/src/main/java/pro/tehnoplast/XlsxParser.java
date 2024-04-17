@@ -8,7 +8,6 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileInputStream;
 import java.util.Iterator;
-import java.util.List;
 
 public class XlsxParser {
     public static void readXlsx(String path) {
@@ -30,7 +29,7 @@ public class XlsxParser {
         }
     }
 
-    public static Order[] createOrder(String path) {
+    public static Order[] createOrders(String path) {
         try (FileInputStream fis = new FileInputStream(path);
              Workbook wb = new XSSFWorkbook(fis)) {
             Sheet sheet = wb.getSheetAt(0);
@@ -39,20 +38,24 @@ public class XlsxParser {
             int columnCount = row.getLastCellNum();
             Order[] orders = new Order[columnCount - 5];
             String ordersDate = row.getCell(1).toString();
-            System.out.println("Дата заказа: " + ordersDate);
             String[] destinations = new String[columnCount - 5];
             for (int i = 4; i < columnCount - 1; i++) {
                 destinations[i - 4] = row.getCell(i).toString();
+                orders[i - 4] = new Order();
+                orders[i - 4].setDestination(destinations[i - 4]);
+                orders[i - 4].setOrderDate(ordersDate);
             }
             String[] orderNumbers = new String[columnCount - 5];
             row = rowIterator.next();
             for (int i = 4; i < columnCount - 1; i++) {
                 orderNumbers[i - 4] = row.getCell(i).toString();
+                orders[i - 4].setOrderNumber(orderNumbers[i - 4]);
             }
             row = rowIterator.next();
             double[] orderSums = new double[columnCount - 5];
             for (int i = 4; i < columnCount - 1; i++) {
                 orderSums[i - 4] = Double.parseDouble(row.getCell(i).toString());
+                orders[i - 4].setOrderSum(orderSums[i - 4]);
             }
             row = rowIterator.next();
             while (rowIterator.hasNext()) {
@@ -67,26 +70,18 @@ public class XlsxParser {
                         int itemQuantity = (int) Double.parseDouble(row.getCell(i).toString());
                         int quotient = (int) Double.parseDouble(row.getCell(3).toString());
                         Item item = new Item(itemCode, itemName, itemQuantity, quotient);
-                        Order order = new Order();
-                        order.addItem(item);
-                        orders[i - 4] = order;
+                        orders[i - 4].addItem(item);
+
+
                     }
                 }
             }
-
-            System.out.println(orders.toString());
-
-//            for (String d : destinations) {
-//                System.out.println(d);
-//            }
-//            for (String n : orderNumbers) {
-//                System.out.println(n);
-//            }
-//            for (double s : orderSums) {
-//                System.out.println(s);
-//            }
-
-
+            row = rowIterator.next();
+            row = rowIterator.next();
+            for (int i = 4; i < columnCount - 1; i++) {
+                orders[i - 4].setInvoiceNumber((int) Double.parseDouble(row.getCell(i).toString()));
+            }
+            return orders;
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,21 +1,24 @@
 package pro.tehnoplast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Order {
     private String destination;
     private String orderNumber;
-    private double orderAmount;
+    private double orderSum;
     private String orderDate;
-    private Item[] items;
+    private List<Item> items = new ArrayList<>();
+    private int invoiceNumber;
 
     public Order() {
     }
 
-    public Order(String destination, String orderNumber, double orderAmount, String orderDate, Item[] items) {
+    public Order(String destination, String orderNumber, double orderSum, String orderDate) {
         this.destination = destination;
         this.orderNumber = orderNumber;
-        this.orderAmount = orderAmount;
+        this.orderSum = orderSum;
         this.orderDate = orderDate;
-        this.items = items;
     }
 
     public String getDestination() {
@@ -34,12 +37,12 @@ public class Order {
         this.orderNumber = orderNumber;
     }
 
-    public double getOrderAmount() {
-        return orderAmount;
+    public double getOrderSum() {
+        return orderSum;
     }
 
-    public void setOrderAmount(double orderAmount) {
-        this.orderAmount = orderAmount;
+    public void setOrderSum(double orderSum) {
+        this.orderSum = orderSum;
     }
 
     public String getOrderDate() {
@@ -50,15 +53,20 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public Item[] getItems() {
+    public List<Item> getItems() {
         return items;
     }
 
     public void addItem(Item item) {
-        Item[] newItems = new Item[items.length + 1];
-        System.arraycopy(items, 0, newItems, 0, items.length);
-        newItems[items.length] = item;
-        items = newItems;
+        items.add(item);
+    }
+
+    public int getInvoiceNumber() {
+        return invoiceNumber;
+    }
+
+    public void setInvoiceNumber(int invoiceNumber) {
+        this.invoiceNumber = invoiceNumber;
     }
 
     @Override
@@ -67,13 +75,14 @@ public class Order {
         sb.append("Order{");
         sb.append("destination='").append(destination).append('\'');
         sb.append(", orderNumber='").append(orderNumber).append('\'');
-        sb.append(", orderAmount=").append(orderAmount);
+        sb.append(", orderSum=").append(orderSum);
         sb.append(", orderDate='").append(orderDate).append('\'');
         sb.append(", items=[");
         for (Item item : items) {
-            sb.append(item).append(", ");
+            sb.append(item.toString()).append(", ");
         }
-        sb.append("]}");
+        sb.append("], invoiceNumber=").append(invoiceNumber);
+        sb.append("}");
         return sb.toString();
     }
 }
