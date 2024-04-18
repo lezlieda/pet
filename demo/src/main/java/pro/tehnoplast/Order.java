@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
+    private static final double palletsOverhead = 0.05;
     private String destination;
     private String orderNumber;
     private double orderSum;
@@ -67,6 +68,15 @@ public class Order {
 
     public void setInvoiceNumber(int invoiceNumber) {
         this.invoiceNumber = invoiceNumber;
+    }
+
+    public int getPalletsNumber() {
+        double palletsNumber = 0;
+        for (Item item : items) {
+            palletsNumber += (double) item.getItemQuantity() / item.getQuotient();
+        }
+        return palletsNumber / Math.floor(palletsNumber) <= (1 + palletsOverhead)
+                ? (int) Math.floor(palletsNumber) : (int) Math.ceil(palletsNumber);
     }
 
     @Override

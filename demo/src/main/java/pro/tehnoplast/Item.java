@@ -49,9 +49,9 @@ public class Item {
     @Override
     public String toString() {
         return "Item{" +
-                "itemCode='" + itemCode + '\'' +
+                "itemCode=" + itemCode +
                 ", itemName='" + itemName + '\'' +
-                ", quotient='" + quotient + "'" +
+                ", quotient=" + quotient +
                 ", itemQuantity=" + itemQuantity +
                 '}';
     }

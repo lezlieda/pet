@@ -9,8 +9,10 @@ public class Main {
         Order[] orders = XlsxParser.createOrders(path);
         for (Order o : orders) {
             System.out.println(o.toString());
+            System.out.println("Количество палет: " + o.getPalletsNumber());
 
         }
+
 
     }
 }

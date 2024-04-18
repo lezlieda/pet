@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="5b657a08-a273-4fa1-897c-67ec752f3010" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/XlsxParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/XlsxParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/01 СВОДНАЯ таблица Заказ в Петрович 19.04.2024.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/~$01 СВОДНАЯ таблица Заказ в Петрович 19.04.2024.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/Pallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pro/tehnoplast/Pallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/01 СВОДНАЯ таблица Заказ в Петрович Питер 16-17.04.2024.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/01 СВОДНАЯ таблица Заказ в Петрович Питер 16-17.04.2024.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/~$01 СВОДНАЯ таблица Заказ в Петрович Питер 16-17.04.2024.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/~$01 СВОДНАЯ таблица Заказ в Петрович Питер 16-17.04.2024.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/~$01 СВОДНАЯ таблица Заказ в Петрович РЦ  Юкки 19.04.2024.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/~$01 СВОДНАЯ таблица Заказ в Петрович РЦ  Юкки 19.04.2024.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/~$01 СВОДНАЯ таблица Заказ в Петрович РЦ  Юкки 19.04.2024.xlsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,8 @@
       <updated>1713259654264</updated>
       <workItem from="1713259655267" duration="13142000" />
       <workItem from="1713343207331" duration="2444000" />
-      <workItem from="1713346017528" duration="2397000" />
+      <workItem from="1713346017528" duration="4637000" />
+      <workItem from="1713431098354" duration="2406000" />
     </task>
     <servers />
   </component>
